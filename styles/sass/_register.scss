@@ -1,0 +1,19 @@
+.register {
+    min-width: 540px;
+    background-color: rgba(48, 33, 33, 60%);
+    height: 100%;
+    padding-left: 2.5rem;
+    padding-right: 6rem;
+    padding-top: 3rem;
+    img {
+        &:nth-child(1) {
+            margin-bottom: 5rem;
+        }
+    }
+    .btns {
+        margin-top: 4rem;
+        a {
+            margin-left: 3rem;
+        }
+    }
+}

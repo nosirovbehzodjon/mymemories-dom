@@ -1,0 +1,16 @@
+.content {
+    grid-area: content;
+    padding: 3rem 3rem 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    gap: 20px;
+}
+
+@media (max-width: 940px) {
+    .content {
+        justify-content: center;
+        padding: 3rem 0 0 0;
+    }
+}

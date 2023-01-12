@@ -1,0 +1,194 @@
+@import "./variables";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: Poppins-Light;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: Poppins-Regular;
+    color: $main-color;
+    border: 3px solid $main-color;
+    padding: 6px 35px;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 50px;
+    transition: all 0.4s;
+    &:hover {
+        cursor: pointer;
+        color: $second-color;
+        border: 3px solid $second-color;
+    }
+}
+
+.link {
+    font-size: 20px;
+    border-bottom: 3px solid $main-color;
+    text-transform: lowercase;
+    transition: all 0.5s;
+    padding: 0 10px;
+    color: $main-color;
+    &:hover {
+        cursor: pointer;
+        color: $second-color;
+        border-bottom: 3px solid $second-color;
+    }
+}
+
+.list-item {
+    width: 100%;
+    font-size: 20px;
+    height: 50px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba($color: $main-color, $alpha: 0.2);
+    }
+    span {
+        margin-left: 10px;
+    }
+}
+
+.input {
+    min-width: 430px;
+    border-bottom: 3px solid $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+    // background-color: yellow;
+    input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        height: 40px;
+        width: 350px;
+        font-size: 20px;
+        transition: all 0.4s;
+        color: rgba(255, 255, 255, 80%);
+        margin-right: 10px;
+        &:focus + img {
+            transition: transform 0.4s;
+            transform: translateX(20px);
+            fill: white;
+        }
+        &::placeholder {
+            color: rgba(255, 255, 255, 80%);
+        }
+        &:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 80%);
+        }
+
+        &::-ms-input-placeholder {
+            color: rgba(255, 255, 255, 80%);
+        }
+    }
+}
+
+.tabs {
+    width: 225px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        text-transform: uppercase;
+        font-size: 25px;
+        font-family: Poppins-Regular;
+        color: $main-color;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .active-tab {
+        color: white;
+    }
+}
+
+@media (max-width: 530px) {
+    .input {
+        min-width: 230px;
+        input {
+            width: 180px;
+        }
+    }
+    .btn {
+        border: 3px solid $main-color;
+        padding: 4px 25px;
+        font-size: 15px;
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000a2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $main-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@font-face {
+    font-family: Poppins-Thin;
+    src: url("../../typography/poppins/Poppins-Thin.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url("../../typography/poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url("../../typography/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url("../../typography/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ExtraBold;
+    src: url("../../typography/poppins/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url("../../typography/poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Black;
+    src: url("../../typography/poppins/Poppins-Black.ttf");
+}
