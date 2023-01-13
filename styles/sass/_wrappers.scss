@@ -35,3 +35,8 @@
         grid-template-areas: "header" "content";
     }
 }
+@media (max-width: 990px) {
+    .wrapper {
+        justify-content: center;
+    }
+}
