@@ -44,9 +44,13 @@
         left: 0;
         top: 0;
         z-index: 100;
+        transition: all 0.4s linear;
         transform: translateX(-100%);
         .hamburger {
             display: flex;
         }
+    }
+    .active-menu {
+        transform: translateX(0%);
     }
 }

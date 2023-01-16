@@ -19,7 +19,8 @@ body {
     font-family: Poppins-Light;
 }
 
-.btn {
+.btn,
+.btn-second {
     text-transform: uppercase;
     font-family: Poppins-Regular;
     color: $main-color;
@@ -33,6 +34,14 @@ body {
         cursor: pointer;
         color: $second-color;
         border: 3px solid $second-color;
+    }
+}
+.btn-second {
+    color: $second-color;
+    border: 3px solid $second-color;
+    &:hover {
+        color: $second-color-hover;
+        border: 3px solid $second-color-hover;
     }
 }
 
@@ -69,16 +78,18 @@ body {
     }
 }
 
-.input {
+.input,
+.textarea {
     max-width: 430px;
     border-bottom: 3px solid $main-color;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 0 20px;
     margin-bottom: 2rem;
-    background-color: yellow;
-    input {
+    input,
+    textarea {
         background-color: transparent;
         outline: none;
         border: none;
@@ -95,14 +106,24 @@ body {
         }
         &::placeholder {
             color: rgba(255, 255, 255, 80%);
+            font-family: Poppins-Light;
         }
-        &:-ms-input-placeholder {
+        &:-ms-placeholder {
             color: rgba(255, 255, 255, 80%);
         }
 
         &::-ms-input-placeholder {
             color: rgba(255, 255, 255, 80%);
         }
+    }
+}
+.textarea {
+    // background-color: aqua;
+    textarea {
+        // background-color: yellow;
+        min-width: 350px;
+        max-width: 350px;
+        min-height: 60px;
     }
 }
 
@@ -116,50 +137,55 @@ body {
         text-transform: uppercase;
         font-size: 25px;
         font-family: Poppins-Regular;
-        color: $main-color;
+        color: $second-color;
+        transition: all 0.4s linear;
         &:hover {
             cursor: pointer;
         }
     }
-    .active-tab {
-        color: white;
+    .active-tab-btn {
+        color: $main-color;
     }
 }
 
 @media (max-width: 530px) {
-    .input {
+    .input,
+    .textarea {
         justify-content: space-between;
         min-width: 100%;
         padding: 0 20px;
-        input {
+        input,
+        textarea {
             width: 300px;
-            background-color: red;
         }
     }
     .link {
         font-size: 16px;
     }
-    .btn {
-        border: 3px solid $main-color;
+    .btn,
+    .btn-second {
+        // border: 3px solid $main-color;
         padding: 4px 25px;
         font-size: 15px;
     }
 }
 @media (max-width: 470px) {
-    .input {
+    .input,
+    .textarea {
         justify-content: space-between;
         min-width: 100%;
         padding: 0 20px;
-        input {
+        input,
+        textarea {
             width: 250px;
-            background-color: red;
         }
     }
     .link {
         font-size: 16px;
     }
-    .btn {
-        border: 3px solid $main-color;
+    .btn,
+    .btn-second {
+        // border: 3px solid $main-color;
         padding: 4px 25px;
         font-size: 15px;
     }

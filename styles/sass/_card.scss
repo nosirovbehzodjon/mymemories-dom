@@ -73,6 +73,10 @@
             padding-right: 2rem;
         }
         .date {
+            position: absolute;
+            // background-color: yellow;
+            right: 1rem;
+            bottom: 1rem;
             font-size: 14px;
             font-weight: 600;
             line-height: 17px;

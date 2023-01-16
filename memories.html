@@ -8,6 +8,15 @@
         <title>memories</title>
     </head>
     <body>
+        <section class="modal">
+            <header>
+                <img src="./images/creatememories.svg" alt="logo" />
+                <span class="close-btn">
+                    <img src="./images/close.svg" alt="close" />
+                </span>
+            </header>
+            <main class="modal-content"></main>
+        </section>
         <section class="memories-wrapper">
             <header class="header">
                 <div class="input">
@@ -18,7 +27,7 @@
             </header>
             <aside class="sidebar">
                 <img src="./images/mymemories-blue.svg" alt="logo" />
-                <button class="btn">create theme</button>
+                <button class="btn" id="create-memories">create theme</button>
                 <ul class="nav_list">
                     <li class="list-item">
                         <img src="./images/heart.svg" alt="icon" />
@@ -60,13 +69,13 @@
                         <p class="date">01/01/2023</p>
                     </div>
                     <div class="action_menu">
-                        <span class="action-icon">
+                        <span class="action-icon delete">
                             <img src="./images/trash.svg" alt="" />
                         </span>
-                        <span class="action-icon">
+                        <span class="action-icon edit">
                             <img src="./images/pen.svg" alt="" />
                         </span>
-                        <span class="action-icon">
+                        <span class="action-icon view">
                             <img src="./images/plus.svg" alt="" />
                         </span>
                     </div>
@@ -311,5 +320,6 @@
                 </div>
             </main>
         </section>
+        <script src="./js/memories.js"></script>
     </body>
 </html>

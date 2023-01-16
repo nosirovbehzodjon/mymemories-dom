@@ -1,10 +1,31 @@
 .register {
-    max-width: 540px;
+    width: 540px;
     background-color: rgba(48, 33, 33, 60%);
     height: 100%;
     padding-left: 2.5rem;
     padding-right: 6rem;
     padding-top: 3rem;
+    .tabs-content {
+        position: relative;
+        width: 430px;
+        // background-color: aqua;
+        height: 400px;
+        overflow: hidden;
+        .signup-form,
+        .login-form {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(100%) scale(0.5);
+            transition: all 0.4s linear;
+            opacity: 0;
+        }
+        .active-tab {
+            transform: translateX(0%) scale(1);
+            opacity: 1;
+        }
+    }
+
     img {
         &:nth-child(1) {
             margin-bottom: 5rem;
@@ -13,7 +34,7 @@
     .btns {
         margin-top: 4rem;
         a {
-            margin-left: 3rem;
+            margin-left: 1rem;
         }
     }
 }

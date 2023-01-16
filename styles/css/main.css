@@ -18,7 +18,8 @@ body {
   font-family: Poppins-Light;
 }
 
-.btn {
+.btn,
+.btn-second {
   text-transform: uppercase;
   font-family: Poppins-Regular;
   color: #12a7fb;
@@ -29,10 +30,20 @@ body {
   border-radius: 50px;
   transition: all 0.4s;
 }
-.btn:hover {
+.btn:hover,
+.btn-second:hover {
   cursor: pointer;
   color: white;
   border: 3px solid white;
+}
+
+.btn-second {
+  color: white;
+  border: 3px solid white;
+}
+.btn-second:hover {
+  color: rgb(214, 214, 214);
+  border: 3px solid rgb(214, 214, 214);
 }
 
 .link {
@@ -68,17 +79,21 @@ body {
   margin-left: 10px;
 }
 
-.input {
+.input,
+.textarea {
   max-width: 430px;
   border-bottom: 3px solid #12a7fb;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 0 20px;
   margin-bottom: 2rem;
-  background-color: yellow;
 }
-.input input {
+.input input,
+.input textarea,
+.textarea input,
+.textarea textarea {
   background-color: transparent;
   outline: none;
   border: none;
@@ -89,19 +104,38 @@ body {
   color: rgba(255, 255, 255, 0.8);
   margin-right: 10px;
 }
-.input input:focus + img {
+.input input:focus + img,
+.input textarea:focus + img,
+.textarea input:focus + img,
+.textarea textarea:focus + img {
   transition: transform 0.4s;
   transform: translateX(20px);
   fill: white;
 }
-.input input::placeholder {
+.input input::placeholder,
+.input textarea::placeholder,
+.textarea input::placeholder,
+.textarea textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Poppins-Light;
+}
+.input input:-ms-placeholder,
+.input textarea:-ms-placeholder,
+.textarea input:-ms-placeholder,
+.textarea textarea:-ms-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
-.input input:-ms-input-placeholder {
+.input input::-ms-input-placeholder,
+.input textarea::-ms-input-placeholder,
+.textarea input::-ms-input-placeholder,
+.textarea textarea::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
-.input input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
+
+.textarea textarea {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 60px;
 }
 
 .tabs {
@@ -115,49 +149,56 @@ body {
   text-transform: uppercase;
   font-size: 25px;
   font-family: Poppins-Regular;
-  color: #12a7fb;
+  color: white;
+  transition: all 0.4s linear;
 }
 .tabs span:hover {
   cursor: pointer;
 }
-.tabs .active-tab {
-  color: white;
+.tabs .active-tab-btn {
+  color: #12a7fb;
 }
 
 @media (max-width: 530px) {
-  .input {
+  .input,
+.textarea {
     justify-content: space-between;
     min-width: 100%;
     padding: 0 20px;
   }
-  .input input {
+  .input input,
+.input textarea,
+.textarea input,
+.textarea textarea {
     width: 300px;
-    background-color: red;
   }
   .link {
     font-size: 16px;
   }
-  .btn {
-    border: 3px solid #12a7fb;
+  .btn,
+.btn-second {
     padding: 4px 25px;
     font-size: 15px;
   }
 }
 @media (max-width: 470px) {
-  .input {
+  .input,
+.textarea {
     justify-content: space-between;
     min-width: 100%;
     padding: 0 20px;
   }
-  .input input {
+  .input input,
+.input textarea,
+.textarea input,
+.textarea textarea {
     width: 250px;
-    background-color: red;
   }
   .link {
     font-size: 16px;
   }
-  .btn {
-    border: 3px solid #12a7fb;
+  .btn,
+.btn-second {
     padding: 4px 25px;
     font-size: 15px;
   }
@@ -275,12 +316,31 @@ body {
   }
 }
 .register {
-  max-width: 540px;
+  width: 540px;
   background-color: rgba(48, 33, 33, 0.6);
   height: 100%;
   padding-left: 2.5rem;
   padding-right: 6rem;
   padding-top: 3rem;
+}
+.register .tabs-content {
+  position: relative;
+  width: 430px;
+  height: 400px;
+  overflow: hidden;
+}
+.register .tabs-content .signup-form,
+.register .tabs-content .login-form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(100%) scale(0.5);
+  transition: all 0.4s linear;
+  opacity: 0;
+}
+.register .tabs-content .active-tab {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
 }
 .register img:nth-child(1) {
   margin-bottom: 5rem;
@@ -289,7 +349,7 @@ body {
   margin-top: 4rem;
 }
 .register .btns a {
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -360,10 +420,14 @@ body {
     left: 0;
     top: 0;
     z-index: 100;
+    transition: all 0.4s linear;
     transform: translateX(-100%);
   }
   .sidebar .hamburger {
     display: flex;
+  }
+  .active-menu {
+    transform: translateX(0%);
   }
 }
 .header {
@@ -489,6 +553,9 @@ body {
   padding-right: 2rem;
 }
 .card .title_desc_date_container .date {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;
@@ -609,5 +676,79 @@ body {
   }
   .card .action_menu .action-icon img {
     height: 15px;
+  }
+}
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(47, 56, 60, 0.7);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: 101;
+  padding: 40px;
+  border-bottom: 0;
+  transition: all 0.15s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+}
+.modal header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal header .close-btn {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.modal header .close-btn:hover {
+  background-color: rgba(18, 167, 251, 0.2);
+}
+.modal .modal-content {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal-content .btns {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal .modal-content .btns button:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.active-modal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 680px) {
+  .modal {
+    padding: 10px;
+  }
+}
+@media (max-width: 540px) {
+  .modal header img[alt=logo] {
+    height: 25px;
+  }
+  .modal header .close-btn {
+    height: 50px;
+    width: 50px;
+  }
+  .modal header .close-btn img[alt=close] {
+    height: 25px;
   }
 }/*# sourceMappingURL=main.css.map */
