@@ -6,6 +6,17 @@ hamburgerBtn.addEventListener("click", function () {
 });
 
 //modal content
+const modalLogo = document.querySelector("#modal-logo");
+function viewMemeories(url, title, desc, date) {
+    //
+    return `
+        <div class="view">
+            <img class="view-img" src="${url}" alt="view" />
+            <p class="view-title">${title}</p>
+            <p class="view-desc">${desc}</p>
+        </div>
+    `;
+}
 function inputGenerate(type, title = "", url = "", desc = "") {
     return `
                 <div class="input">
@@ -70,7 +81,7 @@ function createCard(id, url, title, desc, date) {
                         <span class="action-icon edit" id="edit-memory">
                             <img src="./images/pen.svg" alt="pen" />
                         </span>
-                        <span class="action-icon view">
+                        <span class="action-icon view" id="view-memory">
                             <img src="./images/plus.svg" alt="plus" />
                         </span>
                     </div>
@@ -141,7 +152,9 @@ function dateGenerate() {
     let day = `${d.getDate()}`.padStart(2, "0");
     let month = `${d.getMonth() + 1}`.padStart(2, "0");
     let year = `${d.getFullYear()}`;
-    const date = `${day}/${month}/${year}`;
+    let hour = `${d.getHours()}`.padStart(2, "0");
+    let minute = `${d.getMinutes()}`.padStart(2, "0");
+    const date = `${day}/${month}/${year} | ${hour}:${minute}`;
     return date;
 }
 
@@ -150,6 +163,7 @@ const editMemoryBtn = document.querySelector("#edit-memory");
 
 content.addEventListener("click", function (e) {
     if (e.target.closest(".action-icon")?.classList.contains("edit")) {
+        modalLogo.setAttribute("src", "../images/editmemories.svg");
         let editDataId = e.target.closest(".card")?.dataset.id;
         let editData = currentUser.data.find((item) => item.id == editDataId);
         modalContent.innerHTML = inputGenerate(
@@ -182,5 +196,22 @@ content.addEventListener("click", function (e) {
         cancelBtn.addEventListener("click", function () {
             modal.classList.remove("active-modal");
         });
+    }
+});
+
+//view memories
+content.addEventListener("click", function (e) {
+    if (e.target.closest(".action-icon")?.classList.contains("view")) {
+        modalLogo.setAttribute("src", "../images/viewmemories.svg");
+        let viewDataId = e.target.closest(".card")?.dataset.id;
+        let viewData = currentUser.data.find((item) => item.id == viewDataId);
+        console.log(viewData);
+        modalContent.innerHTML = viewMemeories(
+            viewData.url,
+            viewData.title,
+            viewData.description,
+            viewData.date
+        );
+        modal.classList.add("active-modal");
     }
 });

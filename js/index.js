@@ -38,7 +38,7 @@ haveAcount.addEventListener("click", function () {
 
 loginTabBtn.addEventListener("click", function () {
     activeElement(loginForm, signupForm, loginTabBtn, signupTabBtn);
-    // //content
+    //content
     // loginForm.classList.add("active-tab");
     // signupForm.classList.remove("active-tab");
     // //btn

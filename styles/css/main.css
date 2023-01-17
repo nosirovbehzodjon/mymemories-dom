@@ -718,7 +718,7 @@ body {
   background-color: rgba(18, 167, 251, 0.2);
 }
 .modal .modal-content {
-  margin-top: 10rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
 }
@@ -728,6 +728,30 @@ body {
 }
 .modal .modal-content .btns button:nth-child(2) {
   margin-left: 1rem;
+}
+.modal .modal-content .view {
+  width: 655px;
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal-content .view .view-img {
+  width: 655px;
+  height: 255px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.modal .modal-content .view .view-title {
+  margin: 20px 0;
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 36px;
+}
+.modal .modal-content .view .view-desc {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 22px;
+  color: white;
 }
 
 .active-modal {

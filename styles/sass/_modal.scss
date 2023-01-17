@@ -39,7 +39,7 @@
     }
     .modal-content {
         // background-color: aquamarine;
-        margin-top: 10rem;
+        margin-top: 5rem;
         display: flex;
         flex-direction: column;
         .btns {
@@ -49,6 +49,31 @@
                 &:nth-child(2) {
                     margin-left: 1rem;
                 }
+            }
+        }
+        .view {
+            // background-color: yellow;
+            width: 655px;
+            display: flex;
+            flex-direction: column;
+            .view-img {
+                width: 655px;
+                height: 255px;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+            .view-title {
+                margin: 20px 0;
+                color: white;
+                font-size: 30px;
+                font-weight: 200;
+                line-height: 36px;
+            }
+            .view-desc {
+                font-size: 18px;
+                font-weight: 200;
+                line-height: 22px;
+                color: white;
             }
         }
     }
